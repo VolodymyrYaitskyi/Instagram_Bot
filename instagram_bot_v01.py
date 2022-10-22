@@ -12,6 +12,7 @@ import sqlite3 as sq
 with sq.connect("Instabot.db") as con:
     cur = con.cursor()
 
+
 def create_table():
     cur.execute(""" CREATE TABLE IF NOT EXISTS LIKE_STATISTICS(
     ID INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -19,7 +20,9 @@ def create_table():
     NUMBER_OF_LIKED_POSTS INT
     )""")
 
+
 create_table()
+
 
 class InstagramBot:
 
@@ -152,7 +155,8 @@ class InstagramBot:
                 time.sleep(random.randrange(5, 10))
                 self.check_like_click_like()
 
+
 my_bot = InstagramBot()
-my_bot.like_photo_by_hashtag('nikonphoto', 50)
-#my_bot.like_my_subscribers(2)
+# my_bot.like_photo_by_hashtag('nikonphoto', 50)
+my_bot.like_my_subscribers(3)
 #
